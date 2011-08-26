@@ -10,5 +10,5 @@ The circular gauge control consists of 2 main parts in addition to the basic con
 
 = Properties =
 
-[http://code.google.com/p/wcontrols/wiki/CircularAxis Axis]
-[http://code.google.com/p/wcontrols/wiki/Needle Needle]
+ [CircularAxis Axis]
+ Needle
