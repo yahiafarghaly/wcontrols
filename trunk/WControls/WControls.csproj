@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C6BDE2F-7F1E-4202-8F25-166F7ABE3770}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WControls</RootNamespace>
+    <AssemblyName>WControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseWControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseWControl.Designer.cs">
+      <DependentUpon>BaseWControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\DecimalCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DecimalCell.Designer.cs">
+      <DependentUpon>DecimalCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalCell.Designer.cs">
+      <DependentUpon>DigitalCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\SevenSegmentCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\SevenSegmentCell.Designer.cs">
+      <DependentUpon>SevenSegmentCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\DigitalClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\DigitalClock.Designer.cs">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drawable\CircularAxis.cs" />
+    <Compile Include="Drawable\DigitalBar.cs" />
+    <Compile Include="Drawable\IDrawable.cs" />
+    <Compile Include="Drawable\Needle.cs" />
+    <Compile Include="Gauges\CircularGauge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gauges\CircularGauge.Designer.cs">
+      <DependentUpon>CircularGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CustomExtensions.cs" />
+    <Compile Include="Utils\EaseFunction.cs" />
+    <Compile Include="Utils\GraphicsHelper.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="BaseWControl.resx">
+      <DependentUpon>BaseWControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\Cells\DigitalCell.resx">
+      <DependentUpon>DigitalCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\Cells\SevenSegmentCell.resx">
+      <DependentUpon>SevenSegmentCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\DigitalClock.resx">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gauges\CircularGauge.resx">
+      <DependentUpon>CircularGauge.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
