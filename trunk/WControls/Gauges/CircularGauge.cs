@@ -196,6 +196,8 @@ namespace WControls.Gauges
             }
 
             OnPaintGloss(e.Graphics);
+
+            base.OnPaint(e);
         }
 
         protected override void OnResize(EventArgs e)
