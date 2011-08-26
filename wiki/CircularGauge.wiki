@@ -10,8 +10,8 @@ The circular gauge control consists of 2 main parts in addition to the basic con
 
 == Properties ==
 
- [CircularAxis Axis] - the CircularAxis associated with the gauge for drawing ticks and labels
+[CircularAxis Axis] - the CircularAxis associated with the gauge for drawing ticks and labels
 
- [Needle] - the Needle associated with the gauge to draw the hub, needle, and their shadows
+[Needle] - the Needle associated with the gauge to draw the hub, needle, and their shadows
 
- Value - the value on the axis that the needle should point to. Setting a new value will (if animation is enabled) start the animation to move the needle from the old value to the new value. Setting a value outside of `[`Axis.MinValue, Axis.MaxValue`]` will throw an ArgumentOutOfRangeException.
+*Value* - the value on the axis that the needle should point to. Setting a new value will (if animation is enabled) start the animation to move the needle from the old value to the new value. Setting a value outside of `[`Axis.MinValue, Axis.MaxValue`]` will throw an ArgumentOutOfRangeException.
