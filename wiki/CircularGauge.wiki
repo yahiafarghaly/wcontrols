@@ -1,4 +1,5 @@
 #summary Properties and Usage of the Circular Gauge control
+#labels Featured,Phase-Implementation
 
 = Overview =
 
@@ -9,11 +10,5 @@ The circular gauge control consists of 2 main parts in addition to the basic con
 
 = Properties =
 
-== CircularGauge ==
-  # Axis (see below)
-  # Needle (see below)
-  # Value
-
-== CircularGauge.Axis ==
-
-== CircularGauge.Needle ==
+[http://code.google.com/p/wcontrols/wiki/CircularAxis Axis]
+[http://code.google.com/p/wcontrols/wiki/Needle]
