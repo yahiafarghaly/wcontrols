@@ -22,4 +22,4 @@ The circular gauge control consists of 2 main parts in addition to the basic con
 
 *AnimationInterval* (int) - the amount of time (ms) between animation frames. For example: to get a 20 FPS animation, this value would be set to 50 (`1 sec = 1000 ms, 1000 ms/ 50 ms = 20 FPS`).
 
-*EaseFunction* (EaseFunction) - defines how the animation will look. For more information on easing see [http://msdn.microsoft.com/en-us/library/ee308751.aspx Easing Functions].
+*EaseFunction* (EaseFunctionType) - defines how the animation will look. For more information on easing see [http://msdn.microsoft.com/en-us/library/ee308751.aspx Easing Functions].
