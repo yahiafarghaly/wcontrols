@@ -1,0 +1,7 @@
+#summary Controls how animations progress as time passes
+
+== Types ==
+||Linear||<img src="http://wcontrols.googlecode.com/svn/wiki/images/linear.png" width="200px" height="200px" />||
+||QuadraticInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/quadratic.png" width="200px" height="200px"/>||
+||CubicInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/cubic.png" width="200px" height="200px"/>||
+||SineInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/sine.png" width="200px" height="200px"/>||
