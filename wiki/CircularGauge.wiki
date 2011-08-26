@@ -1,0 +1,19 @@
+#summary Properties and Usage of the Circular Gauge control
+
+= Overview =
+
+The circular gauge control consists of 2 main parts in addition to the basic control background and gloss: the *axis* and the *needle*. The needle points to the gauge's Value, and transitions between values are animated by default. Almost all of the style and functionality attributes can be customized through the Visual Studio designer or programmatically.
+
+<img src="http://wcontrols.googlecode.com/svn/wiki/images/gaugeWhiteRed.png" title="An example CircularGauge" alt="a circular gauge"></img>
+<img src="http://wcontrols.googlecode.com/svn/wiki/images/gaugeAsClock.png" title="CircularGauge used as clock" alt="a circular gauge"></img>
+
+= Properties =
+
+== CircularGauge ==
+  # Axis (see below)
+  # Needle (see below)
+  # Value
+
+== CircularGauge.Axis ==
+
+== CircularGauge.Needle ==
