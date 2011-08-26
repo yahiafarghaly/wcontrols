@@ -264,17 +264,18 @@ namespace WControls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
-
             if (m_bHandleGloss)
             {
                 OnPaintGloss(e.Graphics);
             }
+
+            base.OnPaint(e);
         }
 
-        private void OnResize(object sender, EventArgs e)
+        protected override void OnResize(EventArgs e)
         {
             RecalculatePaths();
+            base.OnResize(e);
         }
 
         #region Disposing
