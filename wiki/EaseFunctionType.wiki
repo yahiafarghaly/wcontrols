@@ -1,7 +1,8 @@
 #summary Controls how animations progress as time passes
 
 == Types ==
-||Linear||<img src="http://wcontrols.googlecode.com/svn/wiki/images/linear.png" width="200px" height="200px" />||
-||QuadraticInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/quadratic.png" width="200px" height="200px"/>||
-||CubicInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/cubic.png" width="200px" height="200px"/>||
-||SineInOut||<img src="http://wcontrols.googlecode.com/svn/wiki/images/sine.png" width="200px" height="200px"/>||
+|| *Type* || *!EaseInOut* || *!EaseIn* || *!EaseOut* ||
+|| *Linear* ||<img src="http://wcontrols.googlecode.com/svn/wiki/images/linear.png" width="125px" height="125px" />||<img src="http://wcontrols.googlecode.com/svn/wiki/images/linear.png" width="125px" height="125px" />||<img src="http://wcontrols.googlecode.com/svn/wiki/images/linear.png" width="125px" height="125px" />||
+|| *Quadratic* ||<img src="http://wcontrols.googlecode.com/svn/wiki/images/quadratic.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/quadraticIn.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/quadraticOut.png" width="125px" height="125px"/>||
+|| *Cubic* ||<img src="http://wcontrols.googlecode.com/svn/wiki/images/cubic.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/cubicIn.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/cubicOut.png" width="125px" height="125px"/>||
+|| *Sine* ||<img src="http://wcontrols.googlecode.com/svn/wiki/images/sine.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/sineIn.png" width="125px" height="125px"/>||<img src="http://wcontrols.googlecode.com/svn/wiki/images/sineOut.png" width="125px" height="125px"/>||
