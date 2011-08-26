@@ -8,9 +8,16 @@ namespace WControls.Utils
     public enum EaseFunctionType
     {
         Linear,
-        QuadraticInOut,
-        SineInOut,
-        CubicInOut
+        Quadratic,
+        Sine,
+        Cubic
+    }
+
+    public enum EaseMode
+    {
+        In,
+        Out,
+        InOut
     }
 
     public class EaseFunction
@@ -26,13 +33,18 @@ namespace WControls.Utils
             get { return m_dTo; }
         }
 
-        public EaseFunction(EaseFunctionType type, double lengthMs, double fromValue, double toValue)
+        public EaseFunction(EaseFunctionType type, EaseMode mode, double lengthMs, double fromValue, double toValue)
         {
             m_type = type;
             m_dLength = lengthMs;
             m_dFrom = fromValue;
             m_dTo = toValue;
+
             m_function = GetEasingFunction(m_type);
+            if (mode != EaseMode.InOut)
+            {
+                m_function = TransformEase(m_function, (mode == EaseMode.In));
+            }
         }
 
         public double GetValue(double curMs)
@@ -62,7 +74,14 @@ namespace WControls.Utils
 
         /// <summary>
         /// Return a function that maps the percentage of the easing function
-        /// to the percentage between the begin and end values
+        /// to the percentage between the begin and end values. This function
+        /// is a EaseInOut function that can be transformed to EaseIn or EaseOut
+        /// <para>
+        /// The function returned MUST MEET 3 REQUIREMENTS:
+        ///   1) f(0) = 0
+        ///   2) f(1/2) = 1/2
+        ///   3) f(1) = 1
+        /// </para>
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -75,13 +94,13 @@ namespace WControls.Utils
                 case EaseFunctionType.Linear:
                     func = d => d;
                     break;
-                case EaseFunctionType.QuadraticInOut:
+                case EaseFunctionType.Quadratic:
                     func = GetPowerEase(2);
                     break;
-                case EaseFunctionType.CubicInOut:
+                case EaseFunctionType.Cubic:
                     func = GetPowerEase(3);
                     break;
-                case EaseFunctionType.SineInOut:
+                case EaseFunctionType.Sine:
                     func = d => (Math.Sin((d - .5) * Math.PI) + 1) / 2d;
                     break;
                 default:
@@ -109,6 +128,30 @@ namespace WControls.Utils
 
                 return dReturn;
             };
+        }
+
+        private static Func<double, double> TransformEase(Func<double, double> original, bool bToEaseIn)
+        {
+            Func<double, double> newFunc = null;
+
+            if (bToEaseIn)
+            {
+                //use the first half of the function ([0, .5])
+                newFunc = percent =>
+                {
+                    return original(percent / 2d) * 2d;
+                };
+            }
+            else
+            {
+                //use the second half of the function ([.5, 1])
+                newFunc = percent =>
+                {
+                    return (original((percent / 2d) + .5d) -.5d) * 2d;
+                };
+            }
+
+            return newFunc;
         }
     }
 }

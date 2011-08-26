@@ -65,6 +65,14 @@ namespace WControls.Gauges
         public EaseFunctionType EaseFunction { get; set; }
 
         /// <summary>
+        /// What mode of easing to use when animating the needle
+        /// </summary>
+        [DefaultValue(typeof(EaseMode), "InOut")]
+        [Description("What mode of easing to use when animating the needle")]
+        [Category("Behavior")]
+        public EaseMode EaseMode { get; set; }
+
+        /// <summary>
         /// Controls the granularity of the animation, smaller values look better but are
         /// more CPU-intensive
         /// </summary>
@@ -133,6 +141,7 @@ namespace WControls.Gauges
             EaseFunction = EaseFunctionType.Linear;
             AnimationLength = 1000;
             AnimationInterval = 100;
+            EaseMode = EaseMode.InOut;
         }
 
         protected void HandleValueChanged()
@@ -157,7 +166,7 @@ namespace WControls.Gauges
 
         private void StartAnimation(double dFrom, double dTo)
         {
-            m_easeFunction = new EaseFunction(EaseFunction, AnimationLength, dFrom, dTo);
+            m_easeFunction = new EaseFunction(EaseFunction, EaseMode, AnimationLength, dFrom, dTo);
             m_animateStart = DateTime.Now;
             m_animationTimer.Start();
         }
