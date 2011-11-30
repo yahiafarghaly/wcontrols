@@ -10,7 +10,7 @@ progress_percent = (cur_time - start_time) / animation_length
 {{{
 value_percent = ease_function(progress_percent)
 }}}
-  # Compute the value for this step of the animation by moving `progress_percent` percent from `from_value` to `to_value`
+  # Compute the value for this step of the animation by moving `value_percent` percent from `from_value` to `to_value`
 {{{
 difference = to_value - from_value
 value = from_value + (difference * value_percent)
