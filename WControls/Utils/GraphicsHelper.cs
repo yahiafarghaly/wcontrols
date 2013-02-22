@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Drawing.Drawing2D;
 using System.Drawing;
@@ -28,7 +27,7 @@ namespace WControls.Utils
                 case ControlShape.RoundedRect:
                     //radius is 10% of smallest side
                     int rad = (int)(Math.Min(pathRect.Height, pathRect.Width) * ROUNDED_RECT_RAD_PERCENT);
-                    path.AddRoundedRectangle(pathRect, rad);
+                    CustomExtensions.AddRoundedRectangle(path, pathRect, rad);
                     break;
                 case ControlShape.Circular:
                     path.AddEllipse(pathRect);
@@ -59,7 +58,7 @@ namespace WControls.Utils
                     case ControlShape.RoundedRect:
                         //radius is 10% of smallest side
                         int rad = (int)(Math.Min(halfRect.Height, halfRect.Width) * ROUNDED_RECT_RAD_PERCENT);
-                        path.AddRoundedRectangle(halfRect, rad);
+                        CustomExtensions.AddRoundedRectangle(path, halfRect, rad);
                         break;
                     case ControlShape.Circular:
                         path.AddArc(pathRect, 180, 142);

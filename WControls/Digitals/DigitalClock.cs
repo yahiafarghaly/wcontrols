@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
@@ -75,9 +74,9 @@ namespace WControls.Digitals
 
         private void UpdateValue()
         {
-            string strHr = Value.ToString("hh");
-            string strMin = Value.ToString("mm");
-            string strSec = Value.ToString("ss");
+            string strHr = Value.Hours.ToString("00");
+            string strMin = Value.Minutes.ToString("00");
+            string strSec = Value.Seconds.ToString("00");
 
             m_cellHr1.Value = strHr[0];
             m_cellHr2.Value = strHr[1];
