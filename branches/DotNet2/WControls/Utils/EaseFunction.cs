@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace WControls.Utils
@@ -20,13 +19,15 @@ namespace WControls.Utils
         InOut
     }
 
+    public delegate T Func<T>(T percent);
+
     public class EaseFunction
     {
         private EaseFunctionType m_type = EaseFunctionType.Linear;
         private double m_dLength = 1000;//in ms
         private double m_dFrom = 0;
         private double m_dTo = 0;
-        private Func<double, double> m_function;
+        private Func<double> m_function;
 
         public double ToValue
         {
@@ -85,9 +86,9 @@ namespace WControls.Utils
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static Func<double, double> GetEasingFunction(EaseFunctionType type)
+        private static Func<double> GetEasingFunction(EaseFunctionType type)
         {
-            Func<double, double> func = null;
+            Func<double> func = null;
 
             switch (type)
             {
@@ -110,7 +111,7 @@ namespace WControls.Utils
             return func;
         }
 
-        private static Func<double, double> GetPowerEase(int power)
+        private static Func<double> GetPowerEase(int power)
         {
             return d =>
             {
@@ -130,9 +131,9 @@ namespace WControls.Utils
             };
         }
 
-        private static Func<double, double> TransformEase(Func<double, double> original, bool bToEaseIn)
+        private static Func<double> TransformEase(Func<double> original, bool bToEaseIn)
         {
-            Func<double, double> newFunc = null;
+            Func<double> newFunc = null;
 
             if (bToEaseIn)
             {

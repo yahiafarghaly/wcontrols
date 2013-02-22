@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.ComponentModel;
@@ -163,7 +162,7 @@ namespace WControls.Drawable
             List<PointF> points = new List<PointF>();
 
             points.Add(leftCenter);
-            if (Corners.IsFlagSet(SegmentCorners.TopLeft))
+            if (CustomExtensions.IsFlagSet(Corners, SegmentCorners.TopLeft))
             {
                 points.Add(topLeft);
             }
@@ -173,7 +172,7 @@ namespace WControls.Drawable
                 points.Add(topCenter);
             }
 
-            if (Corners.IsFlagSet(SegmentCorners.TopRight))
+            if (CustomExtensions.IsFlagSet(Corners, SegmentCorners.TopRight))
             {
                 points.Add(topRight);
             }
@@ -182,7 +181,7 @@ namespace WControls.Drawable
                 points.Add(topRightOffset);
             }
 
-            if (Corners.IsFlagSet(SegmentCorners.BottomRight))
+            if (CustomExtensions.IsFlagSet(Corners, SegmentCorners.BottomRight))
             {
                 points.Add(bottomRight);
             }
@@ -192,7 +191,7 @@ namespace WControls.Drawable
                 points.Add(bottomRightOffset);
             }
 
-            if (Corners.IsFlagSet(SegmentCorners.BottomLeft))
+            if (CustomExtensions.IsFlagSet(Corners, SegmentCorners.BottomLeft))
             {
                 points.Add(bottomLeft);
             }
@@ -202,7 +201,7 @@ namespace WControls.Drawable
                 points.Add(bottomLeftOffset);
             }
 
-            if (Corners.IsFlagSet(SegmentCorners.TopLeft))
+            if (CustomExtensions.IsFlagSet(Corners, SegmentCorners.TopLeft))
             {
                 points.Add(topLeft);
             }

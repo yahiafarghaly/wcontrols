@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
@@ -12,7 +11,7 @@ namespace WControls.Utils
 {
     public static class CustomExtensions
     {
-        public static SizeF MeasureDisplayStringSize(this Graphics graphics, string text, Font font)
+        public static SizeF MeasureDisplayStringSize(Graphics graphics, string text, Font font)
         {
             StringFormat format = StringFormat.GenericTypographic;
             System.Drawing.RectangleF rect = new System.Drawing.RectangleF(0, 0,
@@ -36,7 +35,7 @@ namespace WControls.Utils
             return new SizeF(rect.Right, rect.Bottom);
         }
 
-        public static void AddRoundedRectangle(this GraphicsPath path, RectangleF rect, int cornerRadius)
+        public static void AddRoundedRectangle(GraphicsPath path, RectangleF rect, int cornerRadius)
         {
             if (cornerRadius > 0)
             {
@@ -59,7 +58,7 @@ namespace WControls.Utils
             }
         }
 
-        public static bool IsFlagSet(this SegmentCorners me, SegmentCorners corners)
+        public static bool IsFlagSet(SegmentCorners me, SegmentCorners corners)
         {
             return (me & corners) == corners;
         }
